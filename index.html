@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Let's Journey Begin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: white;
+      overflow: hidden;
+      font-family: 'Great Vibes', cursive;
+    }
+
+    .container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .title-button {
+      background-color: pink;
+      border: none;
+      padding: 20px 40px;
+      border-radius: 30px;
+      font-size: 2em;
+      color: white;
+      font-family: 'Great Vibes', cursive;
+      text-shadow: 0 0 10px white;
+      cursor: pointer;
+      box-shadow: 0 0 20px pink;
+      transition: transform 0.3s ease;
+    }
+
+    .title-button:hover {
+      transform: scale(1.05);
+    }
+
+    .tap-text {
+      margin-top: 10px;
+      font-size: 1.2em;
+      color: #ff69b4;
+      font-family: Arial, sans-serif;
+    }
+
+    .decor {
+      position: absolute;
+      width: 80px;
+      z-index: 1;
+    }
+
+    .teddy {
+      bottom: 20px;
+      left: 20px;
+    }
+
+    .heart {
+      top: 20px;
+      right: 20px;
+    }
+
+    .floating {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://i.imgur.com/OFhYraR.png" class="decor teddy floating" alt="Teddy Bear">
+    <img src="https://i.imgur.com/7sNfNp6.png" class="decor heart floating" alt="Heart">
+
+    <button class="title-button" onclick="goToNextPage()">Let's journey begin</button>
+    <div class="tap-text">tap</div>
+
+    <!-- Romantic Background Music for Page 1 -->
+    <audio autoplay loop id="bgMusic">
+      <source src="https://files.catbox.moe/a3xmwz.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <script>
+    function goToNextPage() {
+      window.location.href = "page2.html";
+    }
+  </script>
+</body>
+</html>
