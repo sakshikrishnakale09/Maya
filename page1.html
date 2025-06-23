@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Love</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #ffe6f0, #ffffff);
+      font-family: 'Great Vibes', cursive;
+      overflow-x: hidden;
+      text-align: center;
+    }
+
+    .heart-container {
+      position: relative;
+      width: 300px;
+      height: 270px;
+      margin: 50px auto 20px auto;
+    }
+
+    .heart {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 300px;
+      height: 270px;
+      background: pink;
+      clip-path: path('M150 270 Q-50 150 75 50 A75 75 0 1 1 150 110 A75 75 0 1 1 225 50 Q350 150 150 270 Z');
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+    }
+
+    .heart.inner {
+      width: 220px;
+      height: 200px;
+      top: 35px;
+      left: 40px;
+      background: white;
+      clip-path: path('M110 200 Q-30 110 55 40 A55 55 0 1 1 110 90 A55 55 0 1 1 165 40 Q250 110 110 200 Z');
+    }
+
+    .love-text {
+      margin-top: 320px;
+      font-size: 2em;
+      color: #d63384;
+      padding: 0 20px;
+      text-shadow: 1px 1px white;
+    }
+
+    .images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+      gap: 15px;
+    }
+
+    .images img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .images img:hover {
+      transform: scale(1.05);
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="heart-container">
+    <div class="heart"></div>
+    <div class="heart inner"></div>
+  </div>
+
+  <div class="love-text">
+    from account koni dila to personal assistant(PA)🤭
+  </div>
+
+  <div class="images">
+    <img src="https://i.ibb.co/GQk1HSB8/IMG-3728.jpg" alt="img1">
+    <img src="https://i.ibb.co/1YcxbKYR/74022-DD7-8-A77-499-B-AD48-B434418-A07-DF.png" alt="img2">
+    <img src="https://i.ibb.co/hRDD3Z3w/IMG-3682.jpg" alt="img3">
+  </div>
+
+  <!-- Romantic Background Music for Page 2 -->
+  <audio autoplay loop>
+    <source src="https://files.catbox.moe/vuk5es.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+</body>
+</html>
