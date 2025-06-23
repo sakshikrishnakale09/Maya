@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forever Journey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fff0f5;
+      font-family: 'Great Vibes', cursive;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-top: 30px;
+      color: #ff69b4;
+      text-shadow: 0 0 10px white;
+    }
+
+    .heart-box {
+      width: 180px;
+      height: 180px;
+      margin: 40px auto 10px auto;
+      background: url('https://i.imgur.com/9GjfbHa.png') no-repeat center center;
+      background-size: contain;
+      position: relative;
+      cursor: pointer;
+      animation: pulse 2s infinite;
+    }
+
+    .heart-box::after {
+      content: 'never ending journey';
+      position: absolute;
+      width: 100%;
+      bottom: -30px;
+      left: 0;
+      font-size: 1.2em;
+      color: #d63384;
+    }
+
+    .tap-text {
+      margin-top: 10px;
+      font-size: 1.2em;
+      color: #ff1493;
+    }
+
+    .petal {
+      position: fixed;
+      top: -50px;
+      width: 30px;
+      height: 30px;
+      background-image: url('https://i.imgur.com/wOaN3Uu.png');
+      background-size: cover;
+      opacity: 0.8;
+      animation: fall linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-50px) rotate(0deg); }
+      100% { transform: translateY(100vh) rotate(360deg); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .memories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .memories img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 105, 180, 0.4);
+    }
+
+    .final-text {
+      margin-top: 30px;
+      font-size: 2em;
+      color: #ff1493;
+      text-shadow: 0 0 10px #fff;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>I Love You Sweetheart Forever</h1>
+
+  <div class="heart-box" onclick="startMagic()"></div>
+  <div class="tap-text">Press the heart</div>
+
+  <div class="memories" id="memoryContainer">
+    <img src="https://i.ibb.co/GQk1HSB8/IMG-3728.jpg" alt="">
+    <img src="https://i.ibb.co/hRDD3Z3w/IMG-3682.jpg" alt="">
+    <img src="https://i.ibb.co/1f1d3f1M/IMG-2259.jpg" alt="">
+    <img src="https://i.ibb.co/9Hg1wG5w/IMG-1840.jpg" alt="">
+    <img src="https://i.ibb.co/j9vBYg11/IMG-8587.jpg" alt="">
+    <img src="https://i.ibb.co/fYmJdS1n/IMG-1167.jpg" alt="">
+  </div>
+
+  <div class="final-text" id="finalText">Forever💞</div>
+
+  <!-- Romantic Background Music for Page 4 -->
+  <audio autoplay loop>
+    <source src="https://files.catbox.moe/raozi7.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function createPetal() {
+      const petal = document.createElement('div');
+      petal.classList.add('petal');
+      petal.style.left = Math.random() * window.innerWidth + 'px';
+      petal.style.animationDuration = (3 + Math.random() * 3) + 's';
+      document.body.appendChild(petal);
+      setTimeout(() => petal.remove(), 6000);
+    }
+
+    function startMagic() {
+      // Start petals
+      setInterval(createPetal, 300);
+
+      // Show memories
+      document.getElementById('memoryContainer').style.opacity = 1;
+
+      // Show final message
+      setTimeout(() => {
+        document.getElementById('finalText').style.opacity = 1;
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>
